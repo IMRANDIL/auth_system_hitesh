@@ -8,6 +8,10 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+//routes..
+
+app.use("/auth", require("./router/AuthRouter"));
+
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
