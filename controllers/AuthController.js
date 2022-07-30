@@ -19,6 +19,8 @@ exports.registerUser = async (req, res) => {
         message: "User already exists",
       });
     }
+
+    // hash the password now...and token generation....
   } catch (error) {
     res.status(500).json({
       message: error.message,
