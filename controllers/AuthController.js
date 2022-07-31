@@ -43,8 +43,7 @@ exports.registerUser = async (req, res) => {
     );
 
     newUser.token = token;
-    //update or not..that's a choice
-    await newUser.save();
+
     newUser.password = undefined;
     res.status(201).json(newUser);
   } catch (error) {
