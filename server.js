@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 //routes..
 
 app.use("/auth", require("./router/AuthRouter"));
-
+app.use("/user", require("./router/dashboardRouter"));
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
