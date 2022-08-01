@@ -103,7 +103,7 @@ exports.loginUser = async (req, res) => {
     // res.status(200).json(existingUser);
     //if you want to use cookies....
     const options = {
-      exprires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+      expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
       httpOnly: true,
     };
 
