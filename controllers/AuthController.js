@@ -100,7 +100,17 @@ exports.loginUser = async (req, res) => {
     existingUser.token = token;
 
     existingUser.password = undefined;
-    res.status(200).json(existingUser);
+    // res.status(200).json(existingUser);
+    //if you want to use cookies....
+    const options = {
+      exprires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+      httpOnly: true,
+    };
+
+    res.status(200).cookie("token", token, options).json({
+      success: true,
+      existingUser,
+    });
   } catch (error) {
     res.status(500).json({
       message: error.message,
